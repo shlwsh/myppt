@@ -240,3 +240,12 @@ export async function isGitRepository(): Promise<boolean> {
     return false;
   }
 }
+
+export async function hasUnpushedCommits(): Promise<boolean> {
+  try {
+    const output = await execGit("git cherry -v");
+    return output.trim().length > 0;
+  } catch {
+    return false;
+  }
+}

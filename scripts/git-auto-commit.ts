@@ -12,6 +12,7 @@ import {
   gitCommit,
   gitPush,
   getRemoteInfo,
+  hasUnpushedCommits,
 } from "./git-utils";
 import { generateCommitMessage } from "./commit-message-generator";
 
@@ -34,8 +35,32 @@ async function main() {
     const status = await getGitStatus();
 
     if (!status.hasChanges) {
-      logger.info("没有需要提交的变更");
-      console.log("✅ 工作区是干净的,没有需要提交的变更");
+      const hasUnpushed = await hasUnpushedCommits();
+      if (hasUnpushed) {
+        logger.info("工作区无变更，但检测到本地有未推送的提交，执行推送流程...");
+        console.log("ℹ️ 工作区是干净的，但本地有尚未推送的提交，正在同步推送到远程仓库...\n");
+        
+        logger.info("获取远程仓库信息...");
+        const remotes = await getRemoteInfo();
+
+        if (remotes.length === 0) {
+          logger.warn("未配置远程仓库");
+          console.log("⚠️  未配置远程仓库,跳过推送步骤");
+        } else {
+          const remote = remotes[0];
+          logger.info("推送到远程仓库", { remote: remote.name, url: remote.url });
+          console.log(`🚀 正在推送到远程仓库 ${remote.name}...`);
+
+          await gitPush(remote.name);
+
+          logger.info("推送成功");
+          console.log("✅ 代码已成功推送到远程仓库\n");
+        }
+        return;
+      }
+
+      logger.info("没有需要提交的变更且已与远程同步");
+      console.log("✅ 工作区是干净的，且本地提交已与远程仓库完全同步。");
       return;
     }
 
