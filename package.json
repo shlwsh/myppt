@@ -5,7 +5,7 @@
   "description": "PPT 与文档构建仓库",
   "type": "module",
   "scripts": {
-    "mygit": "node --import tsx scripts/git-auto-commit.ts"
+    "mygit": "bun run scripts/git-auto-commit.ts"
   },
   "devDependencies": {
     "@langchain/core": "^1.1.40",
