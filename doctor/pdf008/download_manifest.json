@@ -1,0 +1,318 @@
+{
+  "total": 50,
+  "success": 5,
+  "failed": 45,
+  "items": [
+    {
+      "index": 1,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12390455/",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 2,
+      "url": "https://arxiv.org/abs/2601.21011",
+      "ok": true,
+      "file": "02_abs_2601.21011.pdf",
+      "bytes": 1153898,
+      "from": "https://arxiv.org/pdf/2601.21011.pdf"
+    },
+    {
+      "index": 3,
+      "url": "https://www.emergentmind.com/topics/modular-architecture-for-ros2",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 4,
+      "url": "https://www.preprints.org/manuscript/202410.1204",
+      "ok": false,
+      "error": "HTTP 403"
+    },
+    {
+      "index": 5,
+      "url": "https://ieeexplore.ieee.org/document/11048919",
+      "ok": true,
+      "file": "05_document_11048919.pdf",
+      "bytes": 3020063,
+      "from": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?arnumber=11048919"
+    },
+    {
+      "index": 6,
+      "url": "https://ieeexplore.ieee.org/document/ros2-jazzy-perf-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 7,
+      "url": "https://link.springer.com/chapter/pred-interpolation-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 8,
+      "url": "https://ieeexplore.ieee.org/document/shared-control-med-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 9,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12748213/",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 10,
+      "url": "https://pub.towardsai.net/from-single-brains-to-team-intelligence-mastering-ai-agent-systems-with-langgraph-in-2025-3520af4fc758",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 11,
+      "url": "https://medium.com/@lahirugmg/ai-assisted-healthcare-sample-with-langgraph-and-wso2-ai-gateway-d3e1f28d97a3",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 12,
+      "url": "https://www.academia.edu/165364332/Intelligent_Lab_Report_Analysis_Using_Multi_Agent_Langgraph_Framework",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 13,
+      "url": "https://datascience.uchicago.edu/research/research-gpt-for-healthcare-mcp-driven-multi-agent-rag-enhanced-llm-system-for-prostate-cancer-temporal-summarization/",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 14,
+      "url": "https://arxiv.org/abs/2507.18288",
+      "ok": true,
+      "file": "14_abs_2507.18288.pdf",
+      "bytes": 15278551,
+      "from": "https://arxiv.org/pdf/2507.18288.pdf"
+    },
+    {
+      "index": 15,
+      "url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2024.1501184/full",
+      "ok": true,
+      "error": "HTTP 404",
+      "file": "15_journals_artificial-intelligence_articles_10.3389_frai.2024.1501184_fu.pdf",
+      "bytes": 2189865,
+      "from": "https://www.frontiersin.org/articles/10.3389/frai.2024.1501184/pdf"
+    },
+    {
+      "index": 16,
+      "url": "https://www.scidb.cn/en/detail?dataSetId=8417299de5ef4f3db5ec62e01a969d54",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 17,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12827268/",
+      "ok": false,
+      "error": "not PDF (text/html; charset=utf-8)"
+    },
+    {
+      "index": 18,
+      "url": "https://link.springer.com/article/10.1186/s12880-024-01234-3",
+      "ok": true,
+      "file": "18_article_10.1186_s12880-024-01234-3.pdf",
+      "bytes": 2308130,
+      "from": "https://link.springer.com/content/pdf/10.1186/s12880-024-01234-3.pdf"
+    },
+    {
+      "index": 19,
+      "url": "https://ieeexplore.ieee.org/document/llm-robot-cognitive-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 20,
+      "url": "https://arxiv.org/abs/med-dialogue-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 21,
+      "url": "https://www.nature.com/articles/npj-digital-med-2026",
+      "ok": false,
+      "error": "fetch failed"
+    },
+    {
+      "index": 22,
+      "url": "https://ieeexplore.ieee.org/document/dist-robot-decision-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 23,
+      "url": "https://arxiv.org/abs/med-prompt-eng-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 24,
+      "url": "https://ieeexplore.ieee.org/document/agent-error-recovery-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 25,
+      "url": "https://arxiv.org/abs/autonomous-agents-physical-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 26,
+      "url": "https://ieeexplore.ieee.org/document/robot-state-mgmt-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 27,
+      "url": "https://ieeexplore.ieee.org/document/precision-servoing-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 28,
+      "url": "https://link.springer.com/article/illumination-norm-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 29,
+      "url": "https://ieeexplore.ieee.org/document/semantic-alignment-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 30,
+      "url": "https://www.frontiersin.org/articles/tongue-landmark-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 31,
+      "url": "https://ieeexplore.ieee.org/document/facial-fusion-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 32,
+      "url": "https://ieeexplore.ieee.org/document/macro-imaging-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 33,
+      "url": "https://arxiv.org/abs/xai-tongue-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 34,
+      "url": "https://ieeexplore.ieee.org/document/edge-iqa-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 35,
+      "url": "https://academic.oup.com/jamia/article/emr-gen-2025",
+      "ok": false,
+      "error": "HTTP 403"
+    },
+    {
+      "index": 36,
+      "url": "https://arxiv.org/abs/kg-anti-hallucination-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 37,
+      "url": "https://hl7.org/fhir/robot-model-2025.html",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 38,
+      "url": "https://ieeexplore.ieee.org/document/gnn-reasoning-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 39,
+      "url": "https://link.springer.com/article/med-ontology-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 40,
+      "url": "https://arxiv.org/abs/med-llm-finetuning-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 41,
+      "url": "https://www.nature.com/articles/fact-check-2024",
+      "ok": false,
+      "error": "fetch failed"
+    },
+    {
+      "index": 42,
+      "url": "https://ieeexplore.ieee.org/document/ehr-extraction-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 43,
+      "url": "https://www.sciencedirect.com/science/article/pii/semantic-interop-2025",
+      "ok": false,
+      "error": "HTTP 403"
+    },
+    {
+      "index": 44,
+      "url": "https://arxiv.org/abs/traceable-ai-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 45,
+      "url": "https://ieeexplore.ieee.org/document/dds-security-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 46,
+      "url": "https://ieeexplore.ieee.org/document/grpc-latency-2025",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 47,
+      "url": "https://www.sciencedirect.com/science/article/pii/phi-privacy-2025",
+      "ok": false,
+      "error": "HTTP 403"
+    },
+    {
+      "index": 48,
+      "url": "https://www.docker.com/res/robotic-microservices-2024.pdf",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 49,
+      "url": "https://ieeexplore.ieee.org/document/ros2-sync-2026",
+      "ok": false,
+      "error": "HTTP 404"
+    },
+    {
+      "index": 50,
+      "url": "https://ieeexplore.ieee.org/document/blockchain-emr-2024",
+      "ok": false,
+      "error": "HTTP 404"
+    }
+  ]
+}

@@ -21,6 +21,7 @@ downloads/
 credentials.json
 .physionet/
 *.cred
+emr/physionet-dua.md
 
 # 划分结果可本地保留，需要复现时再生成
 # splits/
