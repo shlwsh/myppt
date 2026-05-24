@@ -1,7 +1,8 @@
 {
   "total": 50,
-  "success": 5,
-  "failed": 45,
+  "success": 6,
+  "failed": 44,
+  "note": "Item 9 (PMC12748213) downloaded via Frontiers PDF in retry_refs_008.mjs",
   "items": [
     {
       "index": 1,
@@ -58,8 +59,11 @@
     {
       "index": 9,
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12748213/",
-      "ok": false,
-      "error": "not PDF (text/html; charset=utf-8)"
+      "ok": true,
+      "file": "09_pmc.ncbi.nlm.nih.gov_articles_PMC12748213.pdf",
+      "bytes": 2207211,
+      "from": "https://www.frontiersin.org/articles/10.3389/fmed.2025.1716327/pdf",
+      "note": "via retry_refs_008.mjs"
     },
     {
       "index": 10,
