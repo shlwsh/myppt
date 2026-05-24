@@ -1,0 +1,26 @@
+# 原始数据体积大，不入库；仅保留目录结构、清单与脚本
+raw/
+processed/
+cache/
+downloads/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.h5
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.wav
+*.mp3
+*.mp4
+*.avi
+
+# PhysioNet / 本地凭证（切勿提交）
+credentials.json
+.physionet/
+*.cred
+
+# 划分结果可本地保留，需要复现时再生成
+# splits/

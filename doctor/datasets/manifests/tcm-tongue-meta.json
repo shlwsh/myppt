@@ -1,0 +1,63 @@
+{
+  "dataset_id": "tcm-tongue",
+  "name": "Intelligent Tongue Diagnosis Detection Dataset (TCM-Tongue v3.0)",
+  "source_url": "https://github.com/btbuIntelliSense/Intelligent-tongue-diagnosis-detection-dataset",
+  "license": "见上游仓库及论文引用要求",
+  "download_date": "2026-05-24",
+  "git_commit": "cec2d7f9d25db08453a5e1178412bca538de0cec",
+  "git_commit_date": "2024-10-09",
+  "expected_image_count": 6719,
+  "official_split_counts": {
+    "train": 5594,
+    "val": 572,
+    "test": 553
+  },
+  "label_format": "object_detection_21_classes",
+  "annotation_formats": ["coco", "txt", "xml"],
+  "classes": [
+    { "id": 0, "en": "jiankangshe", "zh": "健康舌" },
+    { "id": 1, "en": "botaishe", "zh": "剥苔舌" },
+    { "id": 2, "en": "hongshe", "zh": "红舌" },
+    { "id": 3, "en": "zishe", "zh": "紫舌" },
+    { "id": 4, "en": "pangdashe", "zh": "胖大舌" },
+    { "id": 5, "en": "shoushe", "zh": "瘦舌" },
+    { "id": 6, "en": "hongdianshe", "zh": "红点舌" },
+    { "id": 7, "en": "liewenshe", "zh": "裂纹舌" },
+    { "id": 8, "en": "chihenshe", "zh": "齿痕舌" },
+    { "id": 9, "en": "baitaishe", "zh": "白苔舌" },
+    { "id": 10, "en": "huangtaishe", "zh": "黄苔舌" },
+    { "id": 11, "en": "heitaishe", "zh": "黑苔舌" },
+    { "id": 12, "en": "huataishe", "zh": "滑苔舌" },
+    { "id": 13, "en": "shenquao", "zh": "肾区凹" },
+    { "id": 14, "en": "shenqutu", "zh": "肾区凸" },
+    { "id": 15, "en": "gandanao", "zh": "肝胆凹" },
+    { "id": 16, "en": "gandantu", "zh": "肝胆凸" },
+    { "id": 17, "en": "piweiao", "zh": "脾胃凹" },
+    { "id": 18, "en": "piweitu", "zh": "脾胃凸" },
+    { "id": 19, "en": "xinfeiao", "zh": "心肺凹" },
+    { "id": 20, "en": "xinfeitu", "zh": "心肺凸" }
+  ],
+  "raw_path": "vision/tcm-tongue/raw",
+  "full_images_source": {
+    "note": "GitHub 仅含元数据与 demo；完整图像需百度网盘下载",
+    "coco": {
+      "url": "https://pan.baidu.com/s/1H2PYhz3ObAmXUHKu25TuDw",
+      "code": "b02g"
+    },
+    "txt": {
+      "url": "https://pan.baidu.com/s/1ioQgU6rQ0KNqHndPyURd3w",
+      "code": "xh4d"
+    },
+    "xml": {
+      "url": "https://pan.baidu.com/s/1NAgA5AiVI2Gt9zoBDxbiHg",
+      "code": "qv55"
+    },
+    "extract_to": "vision/tcm-tongue/raw/images/{train,val,test}/"
+  },
+  "local_status": {
+    "github_cloned": true,
+    "demo_images": 14,
+    "full_images_downloaded": false
+  },
+  "notes": "百度网盘解压后重新运行: bun run datasets:vision-split -- --dataset tcm-tongue"
+}

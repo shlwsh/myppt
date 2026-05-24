@@ -1,0 +1,13 @@
+{
+  "dataset_id": "tcm-tongue",
+  "name": "Intelligent Tongue Diagnosis Detection Dataset (TCM-Tongue)",
+  "source_url": "https://github.com/btbuIntelliSense/Intelligent-tongue-diagnosis-detection-dataset",
+  "license": "见上游仓库 LICENSE",
+  "download_date": null,
+  "git_commit": null,
+  "expected_image_count": 6719,
+  "label_format": "multi_label_20_classes",
+  "classes": [],
+  "raw_path": "vision/tcm-tongue/raw",
+  "notes": "填写 download_date、git_commit、classes 后另存为 tcm-tongue-meta.json"
+}

@@ -1,0 +1,12 @@
+{
+  "dataset_id": "tcm-fd",
+  "name": "TCM Facial Diagnosis (TCM-FD)",
+  "source_url": "https://ieee-dataport.org/",
+  "license": "IEEE DataPort 条款",
+  "download_date": null,
+  "expected_image_count": 20182,
+  "label_format": "11_facial_diagnosis_indicators",
+  "classes": [],
+  "raw_path": "vision/tcm-fd/raw",
+  "notes": "申请通过后填写 download_date 与 classes"
+}

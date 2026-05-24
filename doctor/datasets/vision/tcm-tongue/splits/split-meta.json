@@ -1,0 +1,17 @@
+{
+  "dataset_id": "tcm-tongue",
+  "split_mode": "random",
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15000000000000005
+  },
+  "counts": {
+    "total": 14,
+    "train": 9,
+    "val": 2,
+    "test": 3
+  },
+  "generated_at": "2026-05-24T00:05:36.108Z"
+}
