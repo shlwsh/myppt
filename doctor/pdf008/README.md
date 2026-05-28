@@ -18,7 +18,12 @@
 ## 批量下载
 
 ```bash
+# 在仓库根目录 d:\work\myppt 执行：
+node .agents/skills/thesis-reference-pdf-downloader/scripts/download_refs.mjs \
+  --md doctor/博士论文开题报告20260524-008.md --out doctor/pdf008
+
+# 或在 doctor 目录执行快捷脚本：
 node download_refs_008.mjs
 ```
 
-脚本会解析 `[在线资源链接](...)` 与独立 `https://` 行，并尝试 arXiv / Frontiers / IEEE 等 PDF 直链。
+流程说明见 `doctor/docs/文献下载流程与要点.md`；Agent 技能见 `.agents/skills/thesis-reference-pdf-downloader/`。
