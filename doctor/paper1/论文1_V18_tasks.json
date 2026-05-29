@@ -1,7 +1,9 @@
 {
   "version": "V18",
   "paper": "SCI Paper I - Edge-IQA + LangGraph Routing",
-  "deadline": "2026-12-31",
+  "deadline": "2026-09-30",
+  "integration_plan": "doctor/paper1/科研规划_论文I_V18_franka_ros2整合.md",
+  "franka_ros2_root_wsl": "/root/work/franka_ros2",
   "constraints_doc": "doctor/role.md",
   "plan_doc": "doctor/论文1_V18.md",
   "handbook_doc": "doctor/论文1_V18_AI执行手册.md",
