@@ -7,6 +7,9 @@ import { promisify } from "util";
 
 const execAsync = promisify(exec);
 
+const DEFAULT_TIMEOUT_MS = 30_000;
+const NETWORK_TIMEOUT_MS = 90_000;
+
 /** mygit 自动提交时排除的路径前缀 */
 export const AUTO_COMMIT_EXCLUDE_PREFIXES = ["logs/"] as const;
 
@@ -29,17 +32,59 @@ function isInternalGitRemote(url: string): boolean {
   return /\.winning\.com\.cn/i.test(url);
 }
 
+/** GitHub 等公网远程：推送时绕过可能干扰连接的本地代理 */
+function shouldBypassProxyForRemote(url: string): boolean {
+  return (
+    isInternalGitRemote(url) ||
+    /github\.com/i.test(url) ||
+    /githubusercontent\.com/i.test(url)
+  );
+}
+
+function parsePorcelainPath(line: string): string {
+  const match = line.match(/^.. (.+)$/);
+  return (match?.[1] ?? line.slice(3)).trim();
+}
+
+interface ExecGitOptions {
+  timeoutMs?: number;
+  /** 远程 fetch/push 等网络操作：禁用交互式凭据弹窗并延长超时 */
+  network?: boolean;
+}
+
 async function execGit(
   command: string,
   cwd: string = process.cwd(),
+  options: ExecGitOptions = {},
 ): Promise<string> {
+  const timeoutMs =
+    options.timeoutMs ??
+    (options.network ? NETWORK_TIMEOUT_MS : DEFAULT_TIMEOUT_MS);
+
   try {
-    const { stdout, stderr } = await execAsync(command, { cwd });
+    const { stdout, stderr } = await execAsync(command, {
+      cwd,
+      timeout: timeoutMs,
+      maxBuffer: 10 * 1024 * 1024,
+      env: options.network
+        ? {
+            ...process.env,
+            GIT_TERMINAL_PROMPT: "0",
+            GCM_INTERACTIVE: "Never",
+          }
+        : process.env,
+    });
     if (stderr && !stderr.includes("warning")) {
       console.warn("Git 警告:", stderr);
     }
     return stdout.trim();
   } catch (error) {
+    const err = error as NodeJS.ErrnoException & { killed?: boolean; signal?: string };
+    if (err.killed || err.code === "ETIMEDOUT") {
+      throw new Error(
+        `Git 命令超时（${timeoutMs / 1000}s），可能是网络不可达或凭据交互被阻塞: ${command}`,
+      );
+    }
     throw new Error(
       `Git 命令执行失败: ${error instanceof Error ? error.message : String(error)}`,
     );
@@ -71,7 +116,7 @@ export async function getGitStatus(): Promise<{
     if (!line) continue;
 
     const status = line.substring(0, 2);
-    const file = line.slice(3).trim();
+    const file = parsePorcelainPath(line);
 
     if (isExcludedFromAutoCommit(file)) {
       excluded.push(file);
@@ -142,7 +187,7 @@ async function stageEnvRelatedFiles(): Promise<void> {
 
   for (const line of output.split("\n")) {
     if (!line) continue;
-    const file = line.slice(3).trim();
+    const file = parsePorcelainPath(line);
     if (isEnvRelatedFile(file)) envFiles.push(file);
   }
 
@@ -197,15 +242,19 @@ export async function gitPush(
 
   const remotes = await getRemoteInfo();
   const remoteUrl = remotes.find((r) => r.name === remote)?.url ?? "";
-  const pushCmd = isInternalGitRemote(remoteUrl)
-    ? `git -c http.proxy= -c https.proxy= push ${remote} ${branch}`
-    : `git push ${remote} ${branch}`;
+  const bypassProxy = shouldBypassProxyForRemote(remoteUrl);
+  const networkConfig = [
+    "-c http.lowSpeedLimit=1000",
+    "-c http.lowSpeedTime=20",
+    ...(bypassProxy ? ["-c http.proxy=", "-c https.proxy="] : []),
+  ].join(" ");
+  const pushCmd = `git ${networkConfig} push ${remote} ${branch}`;
 
-  if (isInternalGitRemote(remoteUrl)) {
-    console.log("ℹ️  内网远程仓库，推送时绕过本地 HTTP 代理");
+  if (bypassProxy) {
+    console.log("ℹ️  远程仓库推送时绕过本地 HTTP 代理");
   }
 
-  await execGit(pushCmd);
+  await execGit(pushCmd, process.cwd(), { network: true });
 }
 
 export async function getRemoteInfo(): Promise<

@@ -137,15 +137,20 @@ async function main() {
     logger.info("Git 自动提交完成");
     logger.info("=".repeat(60));
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
     logger.error("执行失败", {
-      error: error instanceof Error ? error.message : String(error),
+      error: message,
       stack: error instanceof Error ? error.stack : undefined,
     });
 
-    console.error(
-      "\n❌ 执行失败:",
-      error instanceof Error ? error.message : String(error),
-    );
+    console.error("\n❌ 执行失败:", message);
+
+    if (message.includes("超时") || message.includes("push")) {
+      console.error(
+        "\n💡 提示: 本地提交可能已成功，但推送失败。请检查网络/VPN/代理后手动执行: git push origin main",
+      );
+    }
+
     process.exit(1);
   }
 }
